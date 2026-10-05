@@ -4,10 +4,10 @@ import 'package:projeto_monitoria/model/monitoria.dart';
 import 'package:projeto_monitoria/data/dadosMonitoria.dart';
 import 'package:flutter/material.dart';
 
-class UserView extends StatelessWidget {
+class MonitoriaView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final Monitoria moni = monitorias[0];
+    final Monitoria moni = monitorias[0];//exemplo, pega a primeira monitoria
 
     /*TextField(
       decoration: InputDecoration(
