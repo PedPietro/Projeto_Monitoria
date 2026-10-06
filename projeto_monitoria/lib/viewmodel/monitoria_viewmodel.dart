@@ -16,4 +16,8 @@ class MonitoriaViewModel extends ChangeNotifier {
                               alunosPresentes: alunosPresentes);
     notifyListeners();
   }
+
+  string pegarHorariosDeMonitor(string nomeMonitor)
+
+  string monitoriasEmDeterminadoPeriodo(string horaInicio, string minInicio, string horaFim, string minFinal)
 }

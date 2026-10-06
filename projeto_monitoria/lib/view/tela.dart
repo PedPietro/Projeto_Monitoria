@@ -5,9 +5,11 @@ import 'package:projeto_monitoria/data/dadosMonitoria.dart';
 import 'package:flutter/material.dart';
 
 class MonitoriaView extends StatelessWidget {
+  const MonitoriaView({super.key});
+
   @override
   Widget build(BuildContext context) {
-    final Monitoria moni = monitorias[0];//exemplo, pega a primeira monitoria
+    final Monitoria moni = monitorias[2]; //exemplo, pega a primeira monitoria
 
     /*TextField(
       decoration: InputDecoration(
@@ -16,14 +18,34 @@ class MonitoriaView extends StatelessWidget {
       ),
     ),*/
 
-    return Scaffold(
+    return
+    Column(
+      
+      children: [
+        Text(
+          'Minhas Monitorias', 
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
+      
+        // Espaçamento opcional entre o título e a lista
+        SizedBox(height: 16), 
+
+        ...monitorias.map(
+              (texto) => Text(
+                'Nome Monitor: ${moni.monitor.nome}, Horário Início: ${moni.horaInicio}:${moni.minInicio}, Horário Fim: ${moni.horaFim}:${moni.minInicio}',
+              ),
+            )
+            .toList(),
+      ]
+    );
+
+    /*return Scaffold(
       appBar: AppBar(title: Text('Usuário MVVM')),
       body: Center(
-        
-        child: 
-
-            Text('Nome Monitor: ${moni.monitor.nome}, Horário Início: ${moni.horaInicio}:${moni.minInicio}, Horário Fim: ${moni.horaFim}:$Action{moni.minInicio}'),
+        child: Text(
+          'Nome Monitor: ${moni.monitor.nome}, Horário Início: ${moni.horaInicio}:${moni.minInicio}, Horário Fim: ${moni.horaFim}:${moni.minInicio}',
+        ),       
       ),
-    );
+    );*/
   }
 }
